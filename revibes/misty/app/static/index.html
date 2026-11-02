@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Misty — Mixing Interfaces by Semantic Transformation. Blend visual examples into working UI code.">
+  <title>Misty · Interface blending studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23745bd6'/%3E%3Cpath d='M16 45V20l16 17 16-17v25' stroke='white' stroke-width='6' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/samples.js"></script><script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Misty home"><span class="brand-mark">m</span><span>misty<span class="brand-dot">.</span></span></a>
+    <span class="divider"></span><div class="project-name">Untitled exploration <span class="subtle">/ Local workspace</span></div>
+    <div class="header-right"><span id="save-status" class="save-status">Saved in this browser</span><button id="health" class="health" title="Check Codex bridge"><i></i><span>Checking bridge</span></button><button id="help-button" class="icon-button" title="How to use Misty" aria-label="Help">?</button></div>
+  </header>
+  <nav class="toolbar" aria-label="Workspace tools">
+    <div class="toolbar-start"><span class="section-label">YOUR CANVAS</span><button class="button primary" id="add-reference"><span>＋</span> Add example</button><button class="button" id="add-source"><span>〈/〉</span> Add source UI</button><span class="tool-separator"></span><button class="button" id="connect-button" title="Connect an example to a source UI">⌁ Global blend</button></div>
+    <div class="toolbar-end"><button class="text-button" id="import-workspace">Open</button><button class="text-button" id="export-workspace">Save workspace</button><button class="text-button" id="undo" title="Undo last local change (Ctrl/Cmd+Z)">↶ Undo</button><button class="text-button" id="redo" title="Redo (Ctrl/Cmd+Shift+Z)">↷ Redo</button></div>
+  </nav>
+  <main>
+    <section id="canvas" aria-label="Infinite design canvas" tabindex="0">
+      <div class="canvas-caption"><span class="tiny-spark">✧</span> A little inspiration. A new direction.<span>Mix examples into your work in progress.</span></div>
+      <div id="world"><svg id="connections" aria-label="Design lineage"></svg><div id="nodes"></div></div>
+      <div id="canvas-instruction" class="canvas-instruction">Connect the dots to blend a full screen. Crop & drag to blend a detail.</div>
+      <div class="canvas-controls"><button id="pan-tool" title="Pan mode; or hold Space and drag" aria-label="Pan mode">✥</button><span></span><button id="zoom-out" title="Zoom out" aria-label="Zoom out">−</button><button id="zoom-label" title="Reset zoom">100%</button><button id="zoom-in" title="Zoom in" aria-label="Zoom in">＋</button><span></span><button id="fit" title="Fit all nodes" aria-label="Fit all nodes">⛶</button></div>
+      <div class="canvas-key">Scroll to pan · Ctrl + scroll to zoom · Space + drag</div>
+      <div id="operation-status" class="operation-status" hidden role="status"><span class="spinner"></span><div><strong>Finding a new direction…</strong><small>Your existing nodes stay as they are.</small></div></div>
+    </section>
+    <aside id="inspector" aria-label="Selected node inspector"></aside>
+  </main>
+  <input type="file" id="image-input" accept="image/png,image/jpeg,image/webp,image/svg+xml" multiple hidden>
+  <input type="file" id="code-input" accept=".jsx,.js,.tsx,.txt" hidden>
+  <input type="file" id="workspace-input" accept=".json" hidden>
+  <div id="toast" role="status" hidden></div>
+  <dialog id="modal"></dialog>
+</body>
+</html>
